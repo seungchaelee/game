@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback } from 'react';
-import Try from '../spec/Try';
+import Try from '../common/Try';
 
 const getNumbers = () => {
   const candidates = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -70,7 +70,7 @@ const NumberBaseball = () => {
         inputEl.current.focus();
       }
     }
-  }, [value, answer]);
+  }, [value, answer, tries]);
 
   const onChangeInput = useCallback((e) => setValue(e.target.value), []);
 
