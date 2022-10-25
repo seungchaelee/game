@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import GuGuDan from './GuGuDan';
+import GuGuDan from './component/GuGuDan';
+import WordRelay from './component/WordRelay';
+import NumberBaseball from './component/NumberBaseball';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GuGuDan />
+    <WordRelay />
+    <NumberBaseball />
   </React.StrictMode>
 );
 

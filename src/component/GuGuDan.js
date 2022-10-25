@@ -1,12 +1,16 @@
-import React, { useRef, useState } from 'react';
-import './App.css';
+import React, { useState, useRef } from 'react';
+import '../App.css';
 
 function GuGuDan() {
   const [first, setFirst] = useState(Math.ceil(Math.random() * 9));
   const [second, setSecond] = useState(Math.ceil(Math.random() * 9));
   const [value, setValue] = useState('');
   const [result, setResult] = useState('');
-  const inputEl = useRef(null);
+  const inputRef = useRef(null);
+
+  const onChangeInput = (e) => {
+    setValue(e.target.value);
+  }
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -16,29 +20,29 @@ function GuGuDan() {
       setFirst(Math.ceil(Math.random() * 9));
       setSecond(Math.ceil(Math.random() * 9));
       setValue('');
-      inputEl.current.focus();
+      inputRef.current.focus();
     } else {
       alert('땡');
       setResult(`${first} X ${second} = 이걸 틀려? ...`);
       setValue('');
-      inputEl.current.focus();
+      inputRef.current.focus();
     }
   };
 
   return (
-    <div className='gugudan'>
+    <>
       <div>{first} 곱하기 {second}는?</div>
       <form onSubmit={onSubmitForm}>
         <input
-          ref={inputEl}
+          ref={inputRef}
           type="number"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChangeInput}
         />
         <button>입력!</button>
       </form>
-      <div id="result">{result}</div>
-    </div>
+      <div className="result">{result}</div>
+    </>
   );
 };
 
