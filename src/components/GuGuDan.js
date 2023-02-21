@@ -1,5 +1,10 @@
 import React, { useState, useRef } from 'react';
 import '../App.css';
+import styled from 'styled-components';
+
+const Back = styled.div`
+  border: solid red 1px;
+`
 
 function GuGuDan() {
   const [first, setFirst] = useState(Math.ceil(Math.random() * 9));
@@ -31,17 +36,19 @@ function GuGuDan() {
 
   return (
     <>
-      <div>{first} 곱하기 {second}는?</div>
-      <form onSubmit={onSubmitForm}>
-        <input
-          ref={inputRef}
-          type="number"
-          value={value}
-          onChange={onChangeInput}
-        />
-        <button>입력!</button>
-      </form>
-      <div className="result">{result}</div>
+      <Back>
+        <div>{first} 곱하기 {second}는?</div>
+        <form onSubmit={onSubmitForm}>
+          <input
+            ref={inputRef}
+            type="number"
+            value={value}
+            onChange={onChangeInput}
+          />
+          <button>1th</button>
+        </form>
+        <div className="result">{result}</div>
+      </Back>
     </>
   );
 };

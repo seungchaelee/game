@@ -1,5 +1,10 @@
 import React, { useState, useRef } from 'react';
 import '../App.css';
+import styled from 'styled-components';
+
+const Back = styled.div`
+  border: solid orange 1px;
+`
 
 export default function WordRelay() {
   const [word, setWord] = useState('이승채');
@@ -27,16 +32,18 @@ export default function WordRelay() {
 
   return (
     <>
-      <div>{word}</div>
-      <form onSubmit={onSubmitForm}>
-        <input
-          ref={inputRef}
-          value={value}
-          onChange={onChangeInput}
-        />
-        <button>입력!</button>
-      </form>
-      <div className='result'>{result}</div>
+      <Back>
+        <div>{word}</div>
+        <form onSubmit={onSubmitForm}>
+          <input
+            ref={inputRef}
+            value={value}
+            onChange={onChangeInput}
+          />
+          <button>2th</button>
+        </form>
+        <div className='result'>{result}</div>
+      </Back>
     </>
   );
 };

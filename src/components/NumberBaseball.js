@@ -1,5 +1,10 @@
 import React, { useRef, useState, useCallback } from 'react';
 import Try from '../common/Try';
+import styled from 'styled-components';
+
+const Back = styled.div`
+  border: solid yellow 1px;
+`
 
 const getNumbers = () => {
   const candidates = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -76,22 +81,25 @@ const NumberBaseball = () => {
 
   return (
     <>
-      <h1>{result}</h1>
-      <form onSubmit={onSubmitForm}>
-        <input
-          ref={inputEl}
-          maxLength={4}
-          value={value}
-          onChange={onChangeInput}
-        />
-        <button>입력!</button>
-      </form>
-      <div>시도: {tries.length}</div>
-      <ul>
-        {tries.map((v, i) => (
-          <Try key={`${i + 1}차 시도 : ${v.try}`} tryInfo={v} />
-        ))}
-      </ul>
+      <Back>
+        <h1>야구게임</h1>
+        <h1>{result}</h1>
+        <form onSubmit={onSubmitForm}>
+          <input
+            ref={inputEl}
+            maxLength={4}
+            value={value}
+            onChange={onChangeInput}
+          />
+          <button>3th</button>
+        </form>
+        <div>시도: {tries.length}</div>
+        <ul>
+          {tries.map((v, i) => (
+            <Try key={`${i + 1}차 시도 : ${v.try}`} tryInfo={v} />
+          ))}
+        </ul>
+      </Back>
     </>
   );
 };

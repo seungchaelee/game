@@ -4,6 +4,9 @@ import './index.css';
 import GuGuDan from './components/GuGuDan';
 import WordRelay from './components/WordRelay';
 import NumberBaseball from './components/NumberBaseball';
+import ResponseCheck from './components/ResponseCheck';
+import RSP from './components/RSP';
+import Lotto from './components/Lotto';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,6 +15,9 @@ root.render(
     <GuGuDan />
     <WordRelay />
     <NumberBaseball />
+    <ResponseCheck />
+    <RSP />
+    <Lotto />
   </React.StrictMode>
 );
 
