@@ -8,6 +8,7 @@ const Back = styled.div`
 const ResponseCheck = () => {
   const [state, setState] = useState('waiting');
   const [message, setMessage] = useState('클릭해서 시작하세요.');
+  const [background, setBackground] = useState('');
   const [result, setResult] = useState([]);
   const timeout = useRef(null);
   const startTime = useRef(0);
@@ -18,6 +19,7 @@ const ResponseCheck = () => {
       timeout.current = setTimeout(() => {
         setState('now');
         setMessage('지금 클릭');
+        setBackground('green');
         startTime.current = new Date();
       }, Math.floor(Math.random() * 1000) + 2000); // 2초~3초 랜덤
       setState('ready');
@@ -30,6 +32,7 @@ const ResponseCheck = () => {
       endTime.current = new Date();
       setState('waiting');
       setMessage('클릭해서 시작하세요.');
+      setBackground('white');
       setResult((prevResult) => {
         return [...prevResult, endTime.current - startTime.current];
       });
@@ -53,6 +56,7 @@ const ResponseCheck = () => {
       <Back>
         <div
           id="screen"
+          style={{ background }}
           className={state}
           onClick={onClickScreen}
         >
