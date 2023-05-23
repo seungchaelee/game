@@ -56,8 +56,8 @@ const ResponseCheck = () => {
       <Back>
         <div
           id="screen"
-          style={{ background }}
           className={state}
+          style={{ background }}
           onClick={onClickScreen}
         >
           {message}

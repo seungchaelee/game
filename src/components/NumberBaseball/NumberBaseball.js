@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback } from 'react';
-import Try from '../common/Try';
+import Try from './Try';
 import styled from 'styled-components';
 
 const Back = styled.div`

@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import GuGuDan from './components/GuGuDan';
-import WordRelay from './components/WordRelay';
-import NumberBaseball from './components/NumberBaseball';
-import ResponseCheck from './components/ResponseCheck';
-import RSP from './components/RSP';
-import Lotto from './components/Lotto';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
+import GuGuDan from './components/GuGudan/GuGuDan';
+import WordRelay from './components/WordRelay/WordRelay';
+import NumberBaseball from './components/NumberBaseball/NumberBaseball';
+import ResponseCheck from './components/ResponseCheck/ResponseCheck';
+import RSP from './components/RSP/RSP';
+import Lotto from './components/Lotto/Lotto';
+import TicTacToe from './components/TicTacToe/TicTacToe';
+import MineSearch from './components/MineSearch/MineSearch';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +20,8 @@ root.render(
     <ResponseCheck />
     <RSP />
     <Lotto />
+    {/* <TicTacToe /> */}
+    <MineSearch />
   </React.StrictMode>
 );
 

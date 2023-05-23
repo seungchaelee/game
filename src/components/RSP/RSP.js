@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useInterval from '../common/useInterval';
+import useInterval from './useInterval';
 import styled from 'styled-components';
 
 const Back = styled.div`
